@@ -1,15 +1,18 @@
 "use client";
 
 import Image from "next/image";
+interface AvartarProps {
+  src?:string | null | undefined;
+}
 
-const Avartar = () => {
+const Avartar:React.FC<AvartarProps> = ({src}) => {
     return ( 
         <Image 
           className="rounded-full"
           height="30"
           width="30"
           alt="avatar"
-          src="/images/placehoder.jpg"
+          src={src ||"/images/placehoder.jpg"}
         />
      );
 }
